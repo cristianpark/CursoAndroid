@@ -14,9 +14,7 @@ public class Login extends Activity {
         setContentView(R.layout.activity_login);
         tab=new tablero();
         Posicion pos = tab.movimiento(1, 2);
-        System.out.print(pos);
-        
-        
+        System.out.print(pos);    
     }
 
     @Override
