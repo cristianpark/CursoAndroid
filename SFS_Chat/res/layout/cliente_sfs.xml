@@ -1,0 +1,95 @@
+<!-- The view used for the connect dialog -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:padding="10dp">
+	
+    <!-- Layout login -->
+    <LinearLayout android:id="@+id/LLlogin" 
+    android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+    
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Conectar a SFS"
+			android:textStyle="bold"
+			android:layout_gravity="center_horizontal"/>
+		<!-- The server address.
+		     The default value is the special address that points to
+		     the loopback address of the developer machine -->
+		<Spinner
+	    android:id="@+id/SPserver"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" />
+		     
+		<EditText
+			android:text=""
+			android:id="@+id/ETnick"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="Usuario" />
+		<EditText
+			android:text=""
+			android:id="@+id/ETpass"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="Password"
+			android:inputType="textPassword" />
+		<Button 
+		    android:id="@+id/BTconectar"
+		    android:text="Conectar"
+		    android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:onClick="establecerConexion"
+		    />
+	</LinearLayout>
+	
+    <!-- Layout login -->
+    <LinearLayout android:id="@+id/LLchat" 
+    android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:visibility="gone"
+	android:background="#000000">
+    
+		<ScrollView
+            android:id="@+id/scroll_chat"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="1">
+			<TextView 
+                android:id="@+id/TVchat"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="#FFFFFF"
+                android:paddingTop="15dp"
+                />
+		</ScrollView>
+		 <LinearLayout
+		     android:orientation="horizontal"
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content">
+					
+			<EditText
+	       		android:id="@+id/ETmensaje"
+	       		android:layout_height="wrap_content"
+	       		android:singleLine="true"
+	       		android:layout_width="fill_parent"
+	       		android:paddingTop="5dp"
+	       		android:hint="Inserte su texto aquí">
+	       	</EditText>
+	       	<Button
+	       		android:id="@+id/button_send"
+	       		android:layout_width="wrap_content"
+	       		android:layout_height="wrap_content"
+	       		android:text="Enviar"
+	       		android:onClick="enviarMensaje" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
